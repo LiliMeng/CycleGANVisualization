@@ -1,12 +1,13 @@
 
-## CycleGAN Discriminator Visualization
+## CycleGAN Discriminator Visualization with Guided Backpropagation
 
 
 
-#### Classification
+#### Visualization
+## Put your own trained CycleGAN discriminator in the model file, then execute
 
 ```
-th classification.lua -input_image_path images/0012.jpg
+th visualization.lua -input_image_path images/0012.jpg
 
 ```
 
