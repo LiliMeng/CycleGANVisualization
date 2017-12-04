@@ -51,19 +51,12 @@ function loadImage(path, loadSize, nc)
   return input
 end
 
--- Model parameters
-cmd:option('-proto_file', 'models/VGG_ILSVRC_16_layers_deploy.prototxt')
-cmd:option('-model_file', 'models/VGG_ILSVRC_16_layers.caffemodel')
-cmd:option('-input_sz', 224, 'Input image dimensions (use 227 for AlexNet)')
+-- Model parameters 
+cmd:option('-model_file', 'models/latest_net_D_A.t7')
 cmd:option('-backend', 'nn')
 
--- Grad-CAM parameters
---cmd:option('-layer_name', 'relu5_3', 'Layer to use for Grad-CAM (use relu5_4 for VGG-19 and relu5 for AlexNet)')
-cmd:option('-layer_name', ' nn.LeakyReLU(0.2)', 'Layer to use for Grad-CAM (use relu5_4 for VGG-19 and relu5 for AlexNet)')
-cmd:option('-input_image_path', 'images/cat_dog.jpg', 'Input image path')
+cmd:option('-input_image_path', 'images/0012.jpg', 'Input image path')
 cmd:option('-output_image_name', '', 'Output image name')
-cmd:option('-label',-1, 'Class label to generate grad-CAM for (-1 = use predicted class, 283 = Tiger cat, 243 = Boxer)')
-cmd:option('-save_as_heatmap', 1, 'Whether to save heatmap or raw Grad-CAM. 1 = save heatmap, 0 = save raw Grad-CAM.')
 
 -- Miscellaneous
 cmd:option('-seed', 123, 'Torch manual random number generator seed')
